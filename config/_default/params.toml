@@ -16,7 +16,7 @@ mainSections = ["posts"]
 disableImageOptimization = false
 disableTextInHeader = false
 
-Logo = "img/icon.jpg"
+# Logo = "img/icon.jpg"
 
 defaultFeaturedImage = "/img/icon.jpg"
 defaultBackgroundImage = "/img/background.jpg"
