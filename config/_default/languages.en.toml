@@ -1,20 +1,23 @@
 languageCode = "en"
 languageName = "English"
 weight = 1
+title = "Kota's Blog"
 
 [params]
-  displayName = "EN"
+  displayName = "English"
   isoCode = "en"
+  rtl = false
+  dateFormat = "2006-01"
+  description = "Kota's Blog | Kota Yagi"
 
 [params.author]
-  name = "yagikota"
-  # image = "img/author.jpg"  # Uncomment after adding your photo to assets/img/author.jpg
-  headline = "SRE / Platform Engineer"
-  bio = "Writing about SRE, Platform Engineering, Kubernetes, and cloud infrastructure."
-  links = [
-    { github = "https://github.com/yagikota" },
-    { linkedin = "https://linkedin.com/in/" },
-    { x-twitter = "https://x.com/" },
-  ]
-
-title = "yagikota's blog"
+name = "Kota Yagi"
+image = "img/icon.jpg"
+headline = "SRE @ Money Forward"
+subtitle = "🚀 Building reliable systems and the platforms that keep them running"
+bio = "SRE @ Money Forward"
+links = [
+  { github = "https://github.com/yagikota" },
+  { linkedin = "https://linkedin.com/in/yagikota/" },
+  { x-twitter = "https://x.com/88888888_kota" },
+]

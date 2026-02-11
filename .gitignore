@@ -18,5 +18,8 @@ Thumbs.db
 # Hugo lock (regenerated on build)
 .hugo_build.lock
 
+# Node modules (if needed for scripts)
+node_modules/
+package-lock.json
 
 .context/
