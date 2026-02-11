@@ -1,0 +1,14 @@
+# -- Markup Configuration --
+# Refer to the Hugo docs for more details about each of these parameters.
+# https://gohugo.io/getting-started/configuration-markup/
+
+[goldmark]
+  [goldmark.renderer]
+    unsafe = true
+
+[highlight]
+  noClasses = false
+
+[tableOfContents]
+  startLevel = 2
+  endLevel = 4
