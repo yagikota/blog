@@ -9,20 +9,34 @@ showPagination: false
 
 ## Hi, I'm yagikota
 
-I'm an **SRE / Platform Engineer** passionate about building reliable, scalable infrastructure and developer platforms.
+I'm an **SRE / Platform Engineer** building reliable systems and the developer platforms that keep them running. My day-to-day involves Kubernetes, observability, and Infrastructure as Code for SaaS products backed by microservices architecture.
 
-### What I Do
+I started my career in backend development with Go, then deliberately moved into infrastructure and reliability engineering. I believe understanding the full stack — from application code to cluster operations — is what makes a well-rounded engineer.
 
-- Design and operate **Kubernetes**-based platforms
-- Build **observability** stacks (metrics, logs, traces)
-- Implement **Infrastructure as Code** with Terraform
-- Drive **SRE culture** -- SLOs, error budgets, incident management
-- Automate everything with **CI/CD pipelines**
+### What I Specialize In
+
+- **Kubernetes** — Cluster operations, custom controllers, and platform migrations
+- **Observability** — Designing metrics, logging, and tracing stacks that make production understandable
+- **Infrastructure as Code** — Terraform modules, GitOps workflows, and declarative configuration
+- **SRE Culture** — Introducing SLI/SLO frameworks and data-driven reliability practices across engineering teams
+- **CI/CD** — Building fast, cost-efficient pipelines that stay out of developers' way
+
+### Problems I Like Solving
+
+I'm drawn to work at the intersection of reliability and developer experience. If something is manual, fragile, or slowing teams down, I want to fix it.
+
+That means building internal tools that let developers own their own reliability. It means replacing gut feelings with clear SLOs and error budgets. It means making infrastructure changes predictable — boring, even — in the best possible way.
+
+### What I'm Exploring
+
+I'm currently thinking about the evolving relationship between **platform engineering and SRE** — how internal developer platforms can treat reliability as a first-class concern. I'm also getting more involved in **open-source** contributions.
 
 ### Why This Blog
 
-I started this blog to share practical knowledge from real-world experience in site reliability and platform engineering. Expect deep dives into Kubernetes, cloud infrastructure, observability, and the culture side of SRE.
+Most engineering knowledge lives in internal docs or gets lost in Slack threads. I started this blog to document what I learn from real-world production systems. Writing helps me think clearly, and if it helps someone else along the way, even better.
+
+Expect posts on Kubernetes, cloud infrastructure, observability, and the human side of SRE.
 
 ### Connect
 
-Feel free to reach out through the social links above. I'm always happy to discuss SRE, platform engineering, or anything infrastructure-related.
+Feel free to reach out through the social links above. I'm always happy to talk about SRE, platform engineering, or anything infrastructure-related.
