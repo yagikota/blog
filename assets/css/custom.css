@@ -1,0 +1,416 @@
+/* ============================================================================
+ * Neo-Kyoto Custom Styles
+ * "Kyoto meets Neo-Tokyo in the future"
+ *
+ * Layers:
+ *   1. Fonts
+ *   2. Base typography
+ *   3. Seigaiha background pattern
+ *   4. Header / Navbar
+ *   5. Profile section (homepage)
+ *   6. Article cards
+ *   7. Links & buttons
+ *   8. Code blocks
+ *   9. Blockquotes
+ *  10. Tags & badges
+ *  11. Footer
+ *  12. Scrollbar
+ *  13. Text selection
+ *  14. Animations & micro-interactions
+ * ============================================================================ */
+
+/* === 1. FONTS === */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@300;400;500;700&family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;1,400&family=Shippori+Mincho+B1:wght@400;700&display=swap');
+
+/* === 2. BASE TYPOGRAPHY === */
+html {
+  font-family: 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  font-size: 13pt;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Orbitron', 'Noto Sans JP', ui-sans-serif, sans-serif;
+  letter-spacing: 0.04em;
+}
+
+code, pre, kbd, samp {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* === 3. SEIGAIHA WAVE PATTERN (subtle background overlay) === */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='50' viewBox='0 0 100 50'%3E%3Cg fill='none' stroke='%23826EBA' stroke-width='0.5'%3E%3Ccircle cx='0' cy='50' r='10'/%3E%3Ccircle cx='0' cy='50' r='20'/%3E%3Ccircle cx='0' cy='50' r='30'/%3E%3Ccircle cx='50' cy='50' r='10'/%3E%3Ccircle cx='50' cy='50' r='20'/%3E%3Ccircle cx='50' cy='50' r='30'/%3E%3Ccircle cx='100' cy='50' r='10'/%3E%3Ccircle cx='100' cy='50' r='20'/%3E%3Ccircle cx='100' cy='50' r='30'/%3E%3Ccircle cx='25' cy='25' r='10'/%3E%3Ccircle cx='25' cy='25' r='20'/%3E%3Ccircle cx='25' cy='25' r='30'/%3E%3Ccircle cx='75' cy='25' r='10'/%3E%3Ccircle cx='75' cy='25' r='20'/%3E%3Ccircle cx='75' cy='25' r='30'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 120px 60px;
+  background-repeat: repeat;
+}
+
+/* === 4. HEADER / NAVBAR === */
+
+/* Gradient neon border at bottom of header */
+.main-menu {
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, #FF2E97, #00C8FF) 1;
+}
+
+/* Fixed header blur overlay */
+#menu-blur {
+  background: rgba(12, 10, 35, 0.75) !important;
+}
+
+/* Site title in header */
+.main-menu > a {
+  font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 8px rgba(255, 46, 151, 0.4);
+}
+
+/* Nav menu items: uppercase + hover glow */
+nav a span,
+.main-menu nav a {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.85rem;
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover span,
+.main-menu nav a:hover {
+  text-shadow: 0 0 8px rgba(0, 200, 255, 0.6);
+}
+
+/* Dropdown menus: glass morphism */
+.menuhide > div {
+  background: rgba(22, 19, 56, 0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(130, 110, 186, 0.2);
+}
+
+/* === 5. PROFILE SECTION (homepage) === */
+
+/* Author avatar: animated neon glow ring (sakura -> cyan -> gold cycle) */
+article header img.rounded-full {
+  box-shadow:
+    0 0 0 3px rgba(12, 10, 35, 1),
+    0 0 0 5px rgba(255, 46, 151, 0.8),
+    0 0 15px rgba(255, 46, 151, 0.4),
+    0 0 30px rgba(0, 200, 255, 0.15);
+  animation: avatarGlow 4s ease-in-out infinite alternate;
+}
+
+@keyframes avatarGlow {
+  0% {
+    box-shadow:
+      0 0 0 3px rgba(12, 10, 35, 1),
+      0 0 0 5px rgba(255, 46, 151, 0.8),
+      0 0 15px rgba(255, 46, 151, 0.4),
+      0 0 30px rgba(0, 200, 255, 0.15);
+  }
+  50% {
+    box-shadow:
+      0 0 0 3px rgba(12, 10, 35, 1),
+      0 0 0 5px rgba(0, 200, 255, 0.8),
+      0 0 15px rgba(0, 200, 255, 0.4),
+      0 0 30px rgba(255, 184, 0, 0.15);
+  }
+  100% {
+    box-shadow:
+      0 0 0 3px rgba(12, 10, 35, 1),
+      0 0 0 5px rgba(255, 184, 0, 0.8),
+      0 0 15px rgba(255, 184, 0, 0.4),
+      0 0 30px rgba(255, 46, 151, 0.15);
+  }
+}
+
+/* Author name on profile: neon pulse */
+article header h1.text-4xl {
+  animation: neonPulse 3s ease-in-out infinite alternate;
+}
+
+/* Author headline */
+article header h2 {
+  font-family: 'Noto Sans JP', sans-serif;
+  letter-spacing: 0.1em;
+}
+
+/* Social links: neon hover */
+article header a[rel~="me"] {
+  transition: filter 0.3s ease, transform 0.2s ease;
+}
+
+article header a[rel~="me"]:hover {
+  filter: drop-shadow(0 0 6px currentColor);
+  transform: scale(1.15);
+}
+
+/* === 6. ARTICLE CARDS === */
+
+/* Card style: glass morphism + neon hover */
+.article-link--card {
+  background: rgba(22, 19, 56, 0.6) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(130, 110, 186, 0.15) !important;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+  overflow: hidden;
+}
+
+.article-link--card:hover {
+  border-color: rgba(255, 46, 151, 0.6) !important;
+  box-shadow:
+    0 0 20px rgba(255, 46, 151, 0.12),
+    0 0 40px rgba(0, 200, 255, 0.06);
+  transform: translateY(-3px);
+}
+
+/* Related article cards */
+.article-link--related {
+  background: rgba(22, 19, 56, 0.5) !important;
+  border: 1px solid rgba(130, 110, 186, 0.15) !important;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.article-link--related:hover {
+  border-color: rgba(0, 200, 255, 0.5) !important;
+  box-shadow: 0 0 15px rgba(0, 200, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* Simple article links */
+.article-link--simple {
+  transition: transform 0.2s ease;
+}
+
+.article-link--simple:hover {
+  transform: translateX(4px);
+}
+
+/* Card titles glow on hover */
+.article-link--card:hover h2,
+.article-link--related:hover h2 {
+  text-shadow: 0 0 8px rgba(255, 46, 151, 0.3);
+}
+
+/* === 7. LINKS & BUTTONS === */
+
+/* Article body links: animated gradient underline */
+.prose a:not(.not-prose):not([rel~="me"]) {
+  text-decoration: none;
+  background-image: linear-gradient(90deg, #00C8FF, #FF2E97);
+  background-size: 0% 2px;
+  background-position: left bottom;
+  background-repeat: no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.prose a:not(.not-prose):not([rel~="me"]):hover {
+  background-size: 100% 2px;
+}
+
+/* Primary buttons: neon glow */
+a[class*="bg-primary"],
+button[class*="bg-primary"] {
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+a[class*="bg-primary"]:hover,
+button[class*="bg-primary"]:hover {
+  box-shadow: 0 0 15px rgba(255, 46, 151, 0.4);
+  transform: scale(1.02);
+}
+
+/* === 8. CODE BLOCKS === */
+
+/* Fenced code blocks */
+pre {
+  background: rgba(12, 10, 35, 0.95) !important;
+  border-left: 3px solid #FF2E97;
+  border-radius: 8px !important;
+  box-shadow: 0 0 15px rgba(255, 46, 151, 0.07);
+}
+
+/* Inline code */
+code:not(pre code) {
+  background: rgba(38, 30, 80, 0.5) !important;
+  color: #FFB9DA !important;
+  padding: 0.15em 0.4em !important;
+  border-radius: 4px !important;
+  font-size: 0.9em;
+}
+
+/* Code copy button */
+.copy-button,
+pre button {
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.copy-button:hover,
+pre button:hover {
+  filter: drop-shadow(0 0 4px rgba(0, 200, 255, 0.6));
+}
+
+/* === 9. BLOCKQUOTES === */
+blockquote {
+  font-family: 'Shippori Mincho B1', 'Noto Sans JP', serif;
+  font-style: normal;
+  border-left: 3px solid #FFB800 !important;
+  background: rgba(255, 184, 0, 0.04);
+  padding: 0.8em 1.2em;
+  border-radius: 0 8px 8px 0;
+}
+
+blockquote p {
+  font-family: inherit;
+}
+
+/* === 10. TAGS & BADGES === */
+
+/* Tag pills: cyan outline style */
+a[href*="/tags/"],
+a[href*="/categories/"] {
+  border: 1px solid rgba(0, 200, 255, 0.4) !important;
+  border-radius: 9999px !important;
+  padding: 0.15em 0.6em !important;
+  font-size: 0.8rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+a[href*="/tags/"]:hover,
+a[href*="/categories/"]:hover {
+  border-color: rgba(0, 200, 255, 0.8) !important;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.2);
+  background: rgba(0, 200, 255, 0.08) !important;
+}
+
+/* === 11. FOOTER === */
+
+/* Footer top separator: gradient line */
+#site-footer {
+  border-top: 1px solid transparent;
+  border-image: linear-gradient(90deg, transparent, #FF2E97, #00C8FF, transparent) 1;
+}
+
+/* Scroll-to-top button glow */
+#site-footer button {
+  transition: filter 0.3s ease;
+}
+
+#site-footer button:hover {
+  filter: drop-shadow(0 0 6px rgba(255, 46, 151, 0.5));
+}
+
+/* === 12. SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(12, 10, 35);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #FF2E97, #00C8FF);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FF50A0, #28DCFF);
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #FF2E97 rgb(12, 10, 35);
+}
+
+/* === 13. TEXT SELECTION === */
+::selection {
+  background: rgba(255, 46, 151, 0.3);
+  color: #F5F3FF;
+}
+
+::-moz-selection {
+  background: rgba(255, 46, 151, 0.3);
+  color: #F5F3FF;
+}
+
+/* === 14. ANIMATIONS & MICRO-INTERACTIONS === */
+
+/* Neon pulse for headings */
+@keyframes neonPulse {
+  from {
+    text-shadow: 0 0 5px rgba(255, 46, 151, 0.3);
+  }
+  to {
+    text-shadow: 0 0 15px rgba(255, 46, 151, 0.7),
+                 0 0 30px rgba(255, 46, 151, 0.2);
+  }
+}
+
+/* Page load: fade-up for main content sections */
+main > * {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: fadeUp 0.6s ease forwards;
+}
+
+main > *:nth-child(1) { animation-delay: 0s; }
+main > *:nth-child(2) { animation-delay: 0.08s; }
+main > *:nth-child(3) { animation-delay: 0.16s; }
+main > *:nth-child(4) { animation-delay: 0.24s; }
+main > *:nth-child(5) { animation-delay: 0.32s; }
+main > *:nth-child(6) { animation-delay: 0.40s; }
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Smooth transitions for interactive elements */
+a, button {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 200ms;
+}
+
+/* Breadcrumb links: subtle glow */
+nav[aria-label="breadcrumb"] a:hover {
+  text-shadow: 0 0 6px rgba(0, 200, 255, 0.4);
+}
+
+/* Table of contents: active item highlight */
+.toc a.active {
+  color: #FF2E97 !important;
+  text-shadow: 0 0 6px rgba(255, 46, 151, 0.3);
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === SCROLL PROGRESS BAR === */
+#neo-kyoto-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  z-index: 9999;
+  background: linear-gradient(90deg, #FF2E97, #00C8FF, #FFB800);
+  width: 0%;
+  transition: width 0.1s linear;
+  pointer-events: none;
+}

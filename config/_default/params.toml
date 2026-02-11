@@ -2,18 +2,20 @@
 # Refer to theme docs for more details about each of these parameters.
 # https://blowfish.page/docs/configuration/#theme-parameters
 
-# Color scheme: "blowfish", "avocado", "fire", "ocean", "forest", "princess", "neon", "bloody", "terminal", "marvel", "noir", "autumn", "congo", "slate"
-colorScheme = "fire"
+# Color scheme: "neokyoto" (custom), "blowfish", "avocado", "fire", "ocean", "forest", "princess", "neon", "bloody", "terminal", "marvel", "noir", "autumn", "congo", "slate"
+colorScheme = "neokyoto"
 defaultAppearance = "dark"   # "light" or "dark"
-autoSwitchAppearance = true  # auto switch based on user OS preference
+autoSwitchAppearance = false # force dark mode for Neo-Kyoto theme
 
 enableSearch = true
 enableCodeCopy = true
+smartTOC = true
+smartTOCHideUnfocusedChildren = true
 
 # mainSections = ["posts"]  # uncomment to restrict homepage to specific sections
 
 [header]
-  layout = "basic"           # "basic", "fixed", "fixed-fill", "fixed-fill-blur"
+  layout = "fixed-fill-blur" # "basic", "fixed", "fixed-fill", "fixed-fill-blur"
 
 [footer]
   showMenu = true
@@ -29,7 +31,7 @@ enableCodeCopy = true
   showRecentItems = 5
   showMoreLink = true
   showMoreLinkDest = "/posts"
-  cardView = false
+  cardView = true
   cardViewScreenWidth = false
   layoutBackgroundBlur = true
 
@@ -40,7 +42,8 @@ enableCodeCopy = true
   showDateOnlyInArticle = false
   showDateUpdated = true
   showAuthor = true
-  showHero = false
+  showHero = true
+  heroStyle = "background"   # cinematic article headers
   showBreadcrumbs = true
   showDraftLabel = true
   showEdit = false
@@ -64,7 +67,8 @@ enableCodeCopy = true
   showViews = false
   showLikes = false
   showTableOfContents = false
-  showCards = false
+  showCards = true
+  cardView = true
   orderByWeight = false
   groupByYear = true
 

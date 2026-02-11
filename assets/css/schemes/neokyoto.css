@@ -1,0 +1,45 @@
+/* Neo-Kyoto Color Scheme
+ * "Kyoto meets Neo-Tokyo in the future"
+ *
+ * Neutral:   Midnight Indigo (ai-zome inspired)
+ * Primary:   Neon Sakura (cyberpunk cherry blossom)
+ * Secondary: Electric Cyan (holographic / futuristic)
+ */
+:root {
+  /* Midnight Indigo - 藍染 (ai-zome) */
+  --color-neutral: 245, 243, 255;
+  --color-neutral-50: 245, 243, 255;
+  --color-neutral-100: 235, 232, 250;
+  --color-neutral-200: 210, 205, 224;
+  --color-neutral-300: 175, 168, 215;
+  --color-neutral-400: 130, 110, 186;
+  --color-neutral-500: 90, 60, 150;
+  --color-neutral-600: 55, 40, 110;
+  --color-neutral-700: 38, 30, 80;
+  --color-neutral-800: 22, 19, 56;
+  --color-neutral-900: 12, 10, 35;
+
+  /* Neon Sakura - ネオン桜 */
+  --color-primary-50: 255, 242, 248;
+  --color-primary-100: 255, 225, 240;
+  --color-primary-200: 255, 185, 218;
+  --color-primary-300: 255, 135, 190;
+  --color-primary-400: 255, 80, 160;
+  --color-primary-500: 255, 46, 151;
+  --color-primary-600: 225, 20, 125;
+  --color-primary-700: 185, 10, 98;
+  --color-primary-800: 145, 5, 72;
+  --color-primary-900: 100, 0, 50;
+
+  /* Electric Cyan - 電光 */
+  --color-secondary-50: 240, 253, 255;
+  --color-secondary-100: 210, 250, 255;
+  --color-secondary-200: 160, 240, 255;
+  --color-secondary-300: 100, 235, 255;
+  --color-secondary-400: 40, 220, 255;
+  --color-secondary-500: 0, 200, 255;
+  --color-secondary-600: 0, 170, 229;
+  --color-secondary-700: 0, 135, 185;
+  --color-secondary-800: 0, 100, 145;
+  --color-secondary-900: 0, 70, 105;
+}

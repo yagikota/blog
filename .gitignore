@@ -17,3 +17,6 @@ Thumbs.db
 
 # Hugo lock (regenerated on build)
 .hugo_build.lock
+
+
+.context/
