@@ -1,6 +1,6 @@
 ---
 title: "Top MCP Servers for Site Reliability Engineers (SRE) and How to Set Them Up in Cursor"
-date: 2025-02-13
+date: 2026-02-13
 draft: false
 summary: "A practical guide to using Model Context Protocol (MCP) servers in Cursor for SRE workflows — incident response, log analysis, infra troubleshooting, and documentation search."
 description: "Introduce MCP servers for SREs, recommend useful servers (GitHub, PagerDuty, Honeycomb, Axiom, Sentry, AWS), and provide step-by-step Cursor setup instructions with configuration examples."
