@@ -1,7 +1,7 @@
 ---
 title: "Top MCP Servers for Site Reliability Engineers (SRE) and How to Set Them Up in Cursor"
 date: 2025-02-13
-draft: true
+draft: false
 summary: "A practical guide to using Model Context Protocol (MCP) servers in Cursor for SRE workflows — incident response, log analysis, infra troubleshooting, and documentation search."
 description: "Introduce MCP servers for SREs, recommend useful servers (GitHub, PagerDuty, Honeycomb, Axiom, Sentry, AWS), and provide step-by-step Cursor setup instructions with configuration examples."
 tags: ["MCP", "SRE", "Cursor", "AI", "DevOps", "Observability"]
@@ -209,13 +209,13 @@ For STDIO servers (local processes), use `command` and `args`. For remote server
 
 ### Step-by-Step Setup
 
-1. **Create the config file**  
+1. **Create the config file**
    Create `~/.cursor/mcp.json` (or `.cursor/mcp.json` in your project).
 
-2. **Add server entries**  
+2. **Add server entries**
    Copy the example above and add or remove servers for your stack. Ensure each server has the correct `command`/`args` or `url`/`headers`.
 
-3. **Set environment variables**  
+3. **Set environment variables**
    Export the required tokens before launching Cursor, for example:
    ```bash
    export GITHUB_TOKEN="ghp_..."
@@ -223,10 +223,10 @@ For STDIO servers (local processes), use `command` and `args`. For remote server
    export AXIOM_TOKEN="..."
    ```
 
-4. **Restart Cursor**  
+4. **Restart Cursor**
    Reload the window (Cmd+Shift+P → "Developer: Reload Window") or restart Cursor so it picks up the new config.
 
-5. **Verify**  
+5. **Verify**
    Go to **Settings → Tools & MCP** and confirm your servers appear. In chat, enable the tools you want the model to use.
 
 ### Minimal Config Example
