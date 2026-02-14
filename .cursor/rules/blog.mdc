@@ -1,0 +1,86 @@
+---
+description: Rules for working on this Hugo blog (Blowfish theme)
+globs:
+alwaysApply: true
+---
+
+# Blog Project Rules
+
+## Project Overview
+
+- Personal blog by Kota Yagi (SRE @ Money Forward)
+- Built with **Hugo** and the **Blowfish** theme
+- Deployed to GitHub Pages via GitHub Actions (`main` branch triggers deploy)
+- Live site: https://yagikota.github.io/blog/
+
+## Directory Structure
+
+- `content/posts/` — Blog posts (each post is a directory with `index.md` + images)
+- `config/_default/` — Hugo & theme configuration (TOML)
+- `themes/blowfish/` — Theme (git submodule, do NOT edit)
+- `layouts/` — Hugo layout overrides
+- `assets/` — Custom CSS/JS overrides
+- `static/` — Static files (images, favicon, etc.)
+- `scripts/` — Utility scripts (favicon generation)
+- `.github/workflows/hugo.yml` — CI/CD pipeline
+
+## Blog Post Conventions
+
+### Creating a New Post
+
+1. Create a new directory under `content/posts/<post-slug>/`
+2. Add an `index.md` file with the required frontmatter
+3. Place images in the same directory as `index.md`
+4. Add a `featured.png` for the post thumbnail
+
+### Frontmatter Template
+
+```yaml
+---
+title: "Post Title Here"
+date: YYYY-MM-DD
+draft: false
+summary: "A concise one-sentence summary for card previews."
+description: "A longer description for SEO and metadata."
+tags: ["Tag1", "Tag2"]
+categories: ["Category"]
+series: []
+showTableOfContents: true
+---
+```
+
+### Writing Style
+
+- Posts are written in **English**
+- Use H2 (`##`) as the top-level heading within post content (H1 is the title)
+- Table of contents is generated from H2–H4 headings
+- Inline images use relative paths: `![alt text](image-name.png)`
+- Add source references below images in parentheses when citing external content
+- Use Markdown for all formatting; raw HTML is supported (`goldmark.renderer.unsafe = true`)
+
+### Featured Images
+
+- Each post should have a `featured.png` in its directory
+- Use 16:9 aspect ratio
+- Style: cyberpunk-themed, neon lights, dark futuristic city, no text or logos
+
+### Existing Categories & Tags
+
+- Categories: `Career`, `Development`
+- Common tags: `SRE`, `Growth`, `Leadership`, `Productivity`, `MCP`, `Cursor`, `AI`, `DevOps`, `Observability`
+
+## Configuration
+
+- Hugo config files are in `config/_default/` (TOML format)
+- Theme parameters: `config/_default/params.toml`
+- Site settings: `config/_default/config.toml`
+- Language/author: `config/_default/languages.en.toml`
+- Navigation menus: `config/_default/menus.en.toml`
+
+## Important Reminders
+
+- **Never edit files under `themes/blowfish/`** — it is a git submodule
+- The `public/` directory is the build output; it is gitignored
+- Hugo version: `0.155.2` (set in `.github/workflows/hugo.yml`)
+- To preview locally: `hugo server -D`
+- To create a new post scaffold: `hugo new posts/<slug>/index.md`
